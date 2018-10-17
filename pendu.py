@@ -43,6 +43,8 @@ else:
 	print('Rebonjour {0}, votre score actuel est de {1} points',.format(joueur , score[joueur])
 
 #########################Choix du mot et début du jeu
+arret = 'n'
+
 while arret != 'o' :
 	tentatives = 0
 	lettres =[]
@@ -69,12 +71,7 @@ while arret != 'o' :
 				affichage_mot_masque(mot, lettres)
 				print('il vous reste',chances-tentatives,'chances de le trouver')			
 
-
-
-
-
-
-
+	arret = input('Voulez vous arreter? (o/n)')
 ############## Sauvegarde des scores, peut être faire une fonction
 with open ('score', 'wb') as fichier_score:
 	pickle = pickle.pickler(fichier_score)
