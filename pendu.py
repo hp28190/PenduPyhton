@@ -40,7 +40,7 @@ joueur = input('Saisir votre nom de joueur')
 if joueur not in scores.keys():
 	score[joueur] = 0
 else:
-	print('Rebonjour {0}, votre score actuel est de {1} points',.format(joueur , score[joueur])
+	print('Rebonjour {0}, votre score actuel est de {1} points'.format(joueur , score[joueur])
 
 #########################Choix du mot et début du jeu
 arret = 'n'

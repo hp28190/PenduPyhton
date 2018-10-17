@@ -21,6 +21,6 @@ def affichage_mot_masque (mot, lettres_trouves):
 		else:
 			aff_mot += '*'
 	
-	print('Le mot que l\'on cherche est: {0}',.format(aff_mot))
+	print('Le mot que l\'on cherche est: {0}'.format(aff_mot))
 		
 
