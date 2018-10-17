@@ -11,6 +11,7 @@ import random
 import pickle
 import os
 import donnees
+from fonctions import affichage_mot_masque
 
 print("Bienvenu dans le jeu du pendu. \n")
 print('Chargement des fichiers\n')
@@ -49,9 +50,10 @@ while fin_partie != 'o' :
 	tentatives = 0
 	lettres =[]
 	#mot = mots[random.randrange(mots.len())]
-	mot = random.choice(mots)
+	mot = random.choice(donnees.mots)
+	mot_trouve = ""
 	
-	while tentatives < chances and mot_trouve != mot :
+	while tentatives < donnees.chances and mot_trouve != mot :
 		lettre = input('Quelle lettre voulez vous essayer?\n')
 		
 		if lettre in lettres:
@@ -63,18 +65,19 @@ while fin_partie != 'o' :
 				tentatives += 1
 				#######affichage mot actuel
 				affichage_mot_masque(mot, lettres)
-				print('il vous reste',chances-tentatives,'chances de le trouver')
+				print('il vous reste',donnees.chances-tentatives,'chances de le trouver')
 			else:
 				print('Dommage cette lettre ne fait pas partie de notre mot\n')
 				tentatives +=1
 				######Affichage mot actuel
 				affichage_mot_masque(mot, lettres)
-				print('il vous reste',chances-tentatives,'chances de le trouver')			
+				print('il vous reste',donnees.chances-tentatives,'chances de le trouver')			
 
+	scores[joueur] += donnees.chances-tentatives
 	fin_partie = input('Voulez vous arreter? (o/n)')
 ############## Sauvegarde des scores, peut être faire une fonction
 with open ('scores', 'wb') as fichier_score:
-	pickle = pickle.pickler(fichier_score)
+	pickle = pickle.Pickler(fichier_score)
 	pickle.dump(scores)
 	
 

@@ -15,6 +15,8 @@ def affichage_mot_masque (mot, lettres_trouves):
 						- une list contenant les lettres trouvées
 						
 	"""
+	aff_mot = ""
+	
 	for lettre in mot:
 		if lettre in lettres_trouves:
 			aff_mot += lettre
