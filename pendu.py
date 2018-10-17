@@ -40,14 +40,27 @@ joueur = input('Saisir votre nom de joueur')
 if joueur not in scores.keys():
 	score[joueur] = 0
 else:
-	print('Rebonjour {0}, votre score actuel est de {1} points',.format(joueur , score[joueur]
+	print('Rebonjour {0}, votre score actuel est de {1} points',.format(joueur , score[joueur])
 
 #########################Choix du mot et début du jeu
-while arret != 'o'
-tentatives = 0
+while arret != 'o' :
+	tentatives = 0
 
-while tentative < chances and mot_trouve 
+	#mot = mots[random.randrange(mots.len())]
+	mot = choice(mots)
 	
+	while tentatives < chances and mot_trouve != mot :
+		lettre = input('Quelle lettre voulez vous essayer?\n')
+		
+		if lettre in mot: 
+			print('Bravo la lettre ',lettre,' est dans le mot que l\'on cherche.\n')
+			
+			#######affichage mot actuel
+		else:
+			print('Dommage cette lettre ne fait pas partie de notre mot'
+			tentatives +=1
+			######Affichage mot actuel
+			
 
 
 
