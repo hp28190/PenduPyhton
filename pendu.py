@@ -45,22 +45,29 @@ else:
 #########################Choix du mot et début du jeu
 while arret != 'o' :
 	tentatives = 0
-
+	lettres =[]
 	#mot = mots[random.randrange(mots.len())]
 	mot = choice(mots)
 	
 	while tentatives < chances and mot_trouve != mot :
 		lettre = input('Quelle lettre voulez vous essayer?\n')
 		
-		if lettre in mot: 
-			print('Bravo la lettre ',lettre,' est dans le mot que l\'on cherche.\n')
-			
-			#######affichage mot actuel
+		if lettre in lettres:
+			print('Vous avez déja saisi cette lettre')
 		else:
-			print('Dommage cette lettre ne fait pas partie de notre mot'
-			tentatives +=1
-			######Affichage mot actuel
-			
+			lettres.append(lettre)
+			if lettre in mot: 
+				print('Bravo la lettre ',lettre,' est dans le mot que l\'on cherche.\n')
+				tentatives += 1
+				#######affichage mot actuel
+				affichage_mot_masque(mot, lettres)
+				print('il vous reste',chances-tentatives,'chances de le trouver')
+			else:
+				print('Dommage cette lettre ne fait pas partie de notre mot\n')
+				tentatives +=1
+				######Affichage mot actuel
+				affichage_mot_masque(mot, lettres)
+				print('il vous reste',chances-tentatives,'chances de le trouver')			
 
 
 
