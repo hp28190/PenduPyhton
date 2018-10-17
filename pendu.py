@@ -6,12 +6,20 @@
 ##
 ##Dans le cadre du cours sur python d'openclassroom
 #############################################
-
+#############Déclaration nécessaires
 import random
+import os
+
+
 
 print("Bienvenu dans le jeu du pendu. \n")
-
 print('Chargement des fichiers\n')
+
+#####Vérification de la présence des fichiers
+if not os.path.exists('scores'):	##créé le fichier seulement si il n'existe pas
+	fichier = open("scores",'w')
+	close(fichier)
+
 
 #####Chargement des scores
 with open('score', 'rb') as fichier_score:
@@ -29,9 +37,9 @@ print('Fin du chargement des fichiers\n')
 
 joueur = input('Saisir votre nom de joueur')
 	
-if joueur not in scores.keys()
+if joueur not in scores.keys():
 	score[joueur] = 0
-else
+else:
 	print('Rebonjour {0}, votre score actuel est de {1} points',.format(joueur , score[joueur]
 
 #########################Choix du mot et début du jeu
