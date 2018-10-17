@@ -10,7 +10,7 @@
 import random
 import pickle
 import os
-
+import donnees
 
 print("Bienvenu dans le jeu du pendu. \n")
 print('Chargement des fichiers\n')
@@ -19,6 +19,7 @@ print('Chargement des fichiers\n')
 if not os.path.exists('scores'):	#créé le fichier seulement si il n'existe pas
 	fichier = open("scores",'w')
 	fichier.close()
+	scores = {}
 else:
 #Chargement des scores
 	with open('scores', 'rb') as fichier_score:
@@ -26,10 +27,10 @@ else:
 		scores = depickler.load()
 	
 #Chargement du dictionnaire et du nombre de coups
-with open('donnees.py', 'rb') as fichier_donnees:
-	depickler = pickle.Unpickler(fichier_donnees)
-	chances = depickler.load()	
-	mots = depickler.load()
+#with open('donnees.py', 'rb') as fichier_donnees:
+#	depickler = pickle.Unpickler(fichier_donnees)
+#	chances = depickler.load()	
+#	mots = depickler.load()
 	
 
 print('Fin du chargement des fichiers\n')
