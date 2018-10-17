@@ -49,7 +49,7 @@ while fin_partie != 'o' :
 	tentatives = 0
 	lettres =[]
 	#mot = mots[random.randrange(mots.len())]
-	mot = choice(mots)
+	mot = random.choice(mots)
 	
 	while tentatives < chances and mot_trouve != mot :
 		lettre = input('Quelle lettre voulez vous essayer?\n')
