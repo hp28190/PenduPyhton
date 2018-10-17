@@ -38,7 +38,7 @@ print('Fin du chargement des fichiers\n')
 joueur = input('Saisir votre nom de joueur\n')
 	
 if joueur not in scores.keys():
-	score[joueur] = 0
+	scores[joueur] = 0
 else:
 	print("Rebonjour {0}, votre score actuel est de {1} points\n".format(joueur, score[joueur]))
 
