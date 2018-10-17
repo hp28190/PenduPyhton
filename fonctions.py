@@ -7,7 +7,7 @@
 ##Fait partie du projet PenduPyhton 
 ##########################################################
 
-def affichage_mot_tentatives (mot, lettres_trouves):
+def affichage_mot_masque (mot, lettres_trouves):
 	"""Cette fonction vérifie et créé un mot avec les lettres toruvé et 
 	des étoiles pour celles qui ne le sont pas
 
