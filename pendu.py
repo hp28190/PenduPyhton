@@ -11,7 +11,7 @@ import random
 import pickle
 import os
 import donnees
-from fonctions import affichage_mot_masque
+from fonctions import mot_masque
 
 print("Bienvenu dans le jeu du pendu. \n")
 print('Chargement des fichiers\n')
@@ -41,7 +41,7 @@ joueur = input('Saisir votre nom de joueur\n')
 if joueur not in scores.keys():
 	scores[joueur] = 0
 else:
-	print("Rebonjour {0}, votre score actuel est de {1} points\n".format(joueur, score[joueur]))
+	print("Rebonjour {0}, votre score actuel est de {1} points\n".format(joueur, scores[joueur]))
 
 #Choix du mot et début du jeu
 fin_partie = 'n'
@@ -66,7 +66,7 @@ while fin_partie != 'o' :
 				#######affichage mot actuel
 				#affichage_mot_masque(mot, lettres)
 				mot_trouve = mot_masque(mot, lettres)
-				print('Le mot que l\'on cherche est: {0}'.format(aff_mot))
+				print('Le mot que l\'on cherche est: {0}'.format(mot_trouve))
 				print('il vous reste',donnees.chances-tentatives,'chances de le trouver')
 			else:
 				print('Dommage cette lettre ne fait pas partie de notre mot\n')
@@ -79,8 +79,8 @@ while fin_partie != 'o' :
 
 	if mot_trouve == mot :
 		print('Bravo vous avez trouver le bon mot\n')
-	else
-		print('Dommage vous n\'avez pas trouver le mot\n')
+	else:
+		print('Dommage vous n\'avez pas trouver le mot, qui était: {0}\n'.format(mot))
 	
 	scores[joueur] += donnees.chances-tentatives
 	fin_partie = input('Voulez vous arreter? (o/n)')
