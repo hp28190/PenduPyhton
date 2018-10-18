@@ -64,15 +64,24 @@ while fin_partie != 'o' :
 				print('Bravo la lettre ',lettre,' est dans le mot que l\'on cherche.\n')
 				tentatives += 1
 				#######affichage mot actuel
-				affichage_mot_masque(mot, lettres)
+				#affichage_mot_masque(mot, lettres)
+				mot_trouve = mot_masque(mot, lettres)
+				print('Le mot que l\'on cherche est: {0}'.format(aff_mot))
 				print('il vous reste',donnees.chances-tentatives,'chances de le trouver')
 			else:
 				print('Dommage cette lettre ne fait pas partie de notre mot\n')
 				tentatives +=1
 				######Affichage mot actuel
-				affichage_mot_masque(mot, lettres)
+				#affichage_mot_masque(mot, lettres)
+				mot_trouve = mot_masque(mot, lettres)
+				print('Le mot que l\'on cherche est: {0}'.format(mot_trouve))
 				print('il vous reste',donnees.chances-tentatives,'chances de le trouver')			
 
+	if mot_trouve == mot :
+		print('Bravo vous avez trouver le bon mot\n')
+	else
+		print('Dommage vous n\'avez pas trouver le mot\n')
+	
 	scores[joueur] += donnees.chances-tentatives
 	fin_partie = input('Voulez vous arreter? (o/n)')
 ############## Sauvegarde des scores, peut être faire une fonction
